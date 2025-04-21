@@ -1,11 +1,13 @@
-const fs=require("fs");
-const write = async()=>{
-    const data = "I'm new Data"
+const fs = require('fs/promises');
+
+const write=async ()=>{
+    const data="I am new Data"
     fs.writeFile("./data.txt",data,(err)=>{
-        if(err) throw err;
-        else{
-            console.log("File updated successfully");
-        }
+        if(err)
+            console.log("Error writing data to file",err)
+        else console.log("File updated successfully");
+
     });
+    
 };
 write();
